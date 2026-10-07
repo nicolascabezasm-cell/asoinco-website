@@ -1,0 +1,14 @@
+# WordPress core (no incluido — instalar por separado)
+wp-admin/
+wp-includes/
+wp-config.php
+wp-config-sample.php
+
+# Datos sensibles
+*.txt
+*.sql
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db

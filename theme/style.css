@@ -1,0 +1,247 @@
+/*
+Theme Name: ASOINCO
+Theme URI: https://www.asoinco.cl
+Author: Pulso21
+Author URI: https://pulso21.cl
+Description: Tema a medida para ASOINCO A.G. — Asociación Gremial de Industriales de la Región de Coquimbo. Desarrollado por Pulso21.
+Version: 0.1.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+Text Domain: asoinco
+*/
+
+:root{
+  --navy:#1B3A6B; --navy-soft:#13294D; --verde:#5BAD5E; --dorado:#F5A623;
+  --oscuro:#060E1F; --gris:#F8FAFC; --borde:#E2E8F0; --texto:#475569; --tinta:#0F1B2E;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--tinta);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.sec{padding:80px 48px}
+h1,h2,h3{letter-spacing:-.02em;line-height:1.12}
+h2{font-size:2.1rem;font-weight:800;color:var(--navy)}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--verde);margin-bottom:14px}
+.lead{font-size:1.05rem;color:var(--texto);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;padding:14px 24px;border-radius:9px;cursor:pointer;border:0;transition:.2s;white-space:nowrap}
+.btn:hover{opacity:.9;transform:translateY(-1px)}
+.btn-dorado{background:var(--dorado);color:var(--navy)}
+.btn-verde{background:var(--verde);color:#fff}
+.btn-outline{background:transparent;border:1.6px solid rgba(255,255,255,.7);color:#fff}
+.btn-ghost{background:#fff;border:1.4px solid var(--borde);color:var(--navy)}
+
+/* 1 TOPBAR */
+.topbar{background:var(--navy);color:rgba(255,255,255,.85);font-size:11px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:9px 48px}
+.topbar .left{display:flex;gap:20px;flex-wrap:wrap}
+.topbar .left span{display:inline-flex;align-items:center;gap:6px}
+.topbar .left svg{width:13px;height:13px;stroke:var(--dorado);fill:none;stroke-width:2}
+.topbar .social{display:flex;gap:12px}
+.topbar .social a{display:inline-flex;opacity:.85;transition:.2s}
+.topbar .social a:hover{opacity:1;color:var(--dorado)}
+.topbar .social svg{width:15px;height:15px;fill:currentColor}
+
+/* 2 NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 18px rgba(15,27,46,.07)}
+.navbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 48px}
+.navbar .logo{height:50px;mix-blend-mode:multiply}
+.nav-menu{display:flex;gap:30px;font-weight:500;font-size:.95rem}
+.nav-menu a{color:var(--tinta);transition:.2s}
+.nav-menu a:hover{color:var(--navy);font-weight:700}
+.nav-right{display:flex;align-items:center;gap:16px}
+.hamb{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px}
+.hamb span{width:24px;height:2.5px;background:var(--navy);border-radius:2px;transition:.25s}
+
+/* BANNER PROMOCIONAL EXPO (home) */
+.expo-banner{background:linear-gradient(90deg,var(--navy),var(--verde));color:#fff;padding:14px 48px;position:relative;z-index:99}
+.expo-banner .wrap{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.expo-banner .eb-txt{font-weight:700;font-size:1rem}
+.expo-banner .eb-cta{background:var(--dorado);color:var(--navy);font-weight:700;padding:9px 20px;border-radius:8px;font-size:.9rem;white-space:nowrap;transition:.2s}
+.expo-banner .eb-cta:hover{background:#ffb733;transform:translateY(-1px)}
+@media(max-width:600px){.expo-banner{padding:12px 20px}.expo-banner .eb-txt{font-size:.9rem;text-align:center}}
+
+/* 3 HERO */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;background:var(--oscuro)}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.1s ease}
+.hero-slide.active{opacity:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,14,31,.94) 0%,rgba(6,14,31,.82) 32%,rgba(6,14,31,.45) 72%,rgba(6,14,31,.2) 100%)}
+.hero-inner{position:relative;height:100%;max-width:1240px;margin:0 auto;padding:0 48px;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);padding:8px 16px;border-radius:30px;font-size:.8rem;font-weight:500;width:fit-content;margin-bottom:24px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 4px rgba(91,173,94,.25)}
+.hero h1{font-size:3.5rem;font-weight:800;max-width:15ch;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--dorado)}
+.hero p{font-size:1.12rem;color:rgba(255,255,255,.85);max-width:52ch;margin-bottom:30px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-nav{position:absolute;left:48px;bottom:40px;display:flex;gap:10px;z-index:5}
+.hero-arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.hero-arrow:hover{background:var(--dorado);border-color:var(--dorado);color:var(--navy)}
+.hero-arrow svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.4}
+.hero-dots{position:absolute;left:152px;bottom:54px;display:flex;gap:8px;z-index:5}
+.hero-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.35);cursor:pointer;transition:.2s;padding:0}
+.hero-dots button.active{background:var(--dorado);width:26px;border-radius:5px}
+.hero-stats{position:absolute;right:48px;bottom:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;z-index:5;max-width:400px}
+.hstat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(12px);padding:16px 20px;border-radius:13px;color:#fff}
+.hstat .n{font-size:1.7rem;font-weight:800;color:var(--dorado);line-height:1}
+.hstat .l{font-size:.76rem;color:rgba(255,255,255,.82);margin-top:5px;line-height:1.3}
+
+/* 4 SOCIOS (carrusel — prioridad) */
+.socios{background:var(--gris);padding:54px 0;overflow:hidden}
+.socios .head{text-align:center;margin-bottom:28px;padding:0 24px}
+.socios .head .eyebrow{color:var(--verde)}
+.socios .head h3{font-size:1.5rem;font-weight:800;color:var(--navy)}
+.socios .head h3 em{font-style:normal;color:var(--dorado)}
+.socios .head p{font-size:.92rem;color:var(--texto);margin-top:6px}
+.marquee{display:flex;width:max-content;animation:scroll 46s linear infinite}
+.marquee:hover{animation-play-state:paused}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.schip{height:120px;display:flex;align-items:center;gap:14px;padding:0 38px;margin:0 4px;white-space:nowrap;transition:.2s}
+.schip .mono{width:54px;height:54px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.05rem;flex:none}
+.schip .nm{font-weight:700;color:var(--navy);font-size:1rem}
+.schip.only-logo{justify-content:center;padding:0 40px}
+.schip.only-logo:hover{opacity:.75}
+
+/* 5 ¿POR QUÉ? */
+.why-head{text-align:center;margin-bottom:42px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why{padding:6px 8px}
+.why .ico{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why .ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2}
+.why h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.why p{font-size:.95rem;color:var(--texto)}
+.ico-a{background:rgba(45,108,179,.1);color:var(--navy)}
+.ico-v{background:rgba(91,173,94,.14);color:var(--verde)}
+.ico-d{background:rgba(245,166,35,.16);color:#B9760C}
+
+/* 6 BENEFICIOS */
+.ben{background:var(--gris)}
+.ben-head{text-align:center;margin-bottom:40px}
+.ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.bcard{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:30px 26px;transition:.2s}
+.bcard:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(15,27,46,.1);border-color:var(--navy)}
+.bcard .emoji{font-size:2.1rem;margin-bottom:16px}
+.bcard h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.bcard p{font-size:.9rem;color:var(--texto)}
+.bcard b{color:var(--navy)}
+
+/* 7 DIRECTORIO TEASER */
+.dir-banner{background:var(--navy);color:#fff;border-radius:18px;padding:48px 44px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden}
+.dir-banner::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(91,173,94,.1)}
+.dir-banner .t{position:relative;z-index:1;max-width:60ch}
+.dir-banner .eyebrow{color:var(--dorado)}
+.dir-banner h2{color:#fff;font-size:1.9rem;margin-bottom:10px}
+.dir-banner p{color:rgba(255,255,255,.85);font-size:1.02rem}
+.dir-banner b{color:var(--dorado)}
+.dir-banner .btn{position:relative;z-index:1;flex:none}
+.dir-rubros{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.dir-rubros span{font-size:.8rem;font-weight:600;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:7px 14px;border-radius:30px}
+
+/* 8 EXPO */
+.expo{position:relative;padding:100px 48px;text-align:center;color:#fff;background-image:url('https://www.asoinco.cl/wp-content/uploads/2025/05/EXPO-ASOINCO-2024-35-scaled.jpg');background-size:cover;background-position:center;background-attachment:fixed}
+.expo .ov{position:absolute;inset:0;background:rgba(27,58,107,.88)}
+.expo-inner{position:relative;max-width:840px;margin:0 auto}
+.expo .eyebrow{color:var(--dorado)}
+.expo h2{color:#fff;font-size:2.4rem;margin-bottom:32px}
+.expo-stats{display:flex;justify-content:center;gap:56px;margin-bottom:36px;flex-wrap:wrap}
+.expo-stats .n{font-size:2.7rem;font-weight:800;color:var(--dorado);line-height:1}
+.expo-stats .l{font-size:.85rem;color:rgba(255,255,255,.85);margin-top:6px}
+
+/* 9 NOTICIAS */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.ncard{border:1px solid var(--borde);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:#fff;transition:.2s;cursor:pointer}
+.ncard:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(15,27,46,.1);border-color:var(--navy)}
+.ncard .imgbox{overflow:hidden}
+.ncard .imgbox img{width:100%;object-fit:cover;transition:transform .4s;height:200px}
+.ncard:hover .imgbox img{transform:scale(1.04)}
+.ncard .body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.ncard .cat{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);margin-bottom:9px}
+.ncard h3{font-size:1.1rem;font-weight:700;color:var(--navy);line-height:1.28}
+.ncard .date{margin-top:auto;padding-top:14px;font-size:.8rem;color:var(--texto)}
+.ncard .cat.socio{color:#B9760C}
+.ncard .socio-badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#B9760C;background:rgba(245,166,35,.14);border-radius:20px;padding:3px 10px;margin-top:10px;align-self:flex-start}
+.ncard .imgph{height:200px;background:linear-gradient(135deg,var(--navy),var(--oscuro));display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-weight:700;font-size:.9rem}
+
+/* 10 INSTAGRAM */
+.ig-head{text-align:center;margin-bottom:30px}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.ig-cell{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;cursor:pointer}
+.ig-cell img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.ig-cell:hover img{transform:scale(1.04)}
+.ig-cell .ov{position:absolute;inset:0;background:rgba(27,58,107,.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:.25s}
+.ig-cell:hover .ov{opacity:1}
+.ig-cell .ov svg{width:34px;height:34px;stroke:#fff;fill:none;stroke-width:2}
+.ig-more{text-align:center;margin-top:30px}
+
+/* 11 CTA */
+.cta{background:var(--oscuro);color:#fff}
+.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta h2{color:#fff;font-size:2.1rem;max-width:16ch}
+.cta h2 em{font-style:normal;color:var(--dorado)}
+.cta .right{max-width:430px}
+.cta .right p{color:rgba(255,255,255,.82);margin-bottom:20px}
+
+/* 12 ALIADOS (cerca del footer) */
+.allies{background:#fff;border-top:1px solid var(--borde);padding:48px 48px}
+.allies .head{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--texto);margin-bottom:26px}
+.allies-row{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.ally{height:60px;min-width:120px;padding:0 22px;background:#fff;border:1px solid var(--borde);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.ally:hover{border-color:var(--navy);box-shadow:0 6px 16px rgba(27,58,107,.08)}
+.ally img{max-height:38px;max-width:120px;object-fit:contain}
+.ally .txt{font-weight:800;color:var(--navy);font-size:1rem;letter-spacing:.02em}
+
+/* 13 FOOTER */
+.footer{background:var(--navy-soft);color:rgba(255,255,255,.72);font-size:.9rem}
+.footer .wrap{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1.1fr;gap:40px;padding:62px 48px 34px}
+.footer .flogo{height:48px;display:block;margin-bottom:18px}
+.footer p{font-size:.88rem;line-height:1.7;margin-bottom:18px}
+.footer h5{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:16px}
+.footer .col a{display:block;margin-bottom:10px;color:rgba(255,255,255,.72);transition:.2s}
+.footer .col a:hover{color:var(--dorado)}
+.footer .contact div{display:flex;gap:9px;margin-bottom:12px;align-items:flex-start}
+.footer .contact svg{width:16px;height:16px;stroke:var(--verde);fill:none;stroke-width:2;flex:none;margin-top:3px}
+.footer .social{display:flex;gap:12px;margin-top:6px}
+.footer .social a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:.2s}
+.footer .social a:hover{background:var(--verde)}
+.footer .social svg{width:16px;height:16px;fill:#fff}
+.fig{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.fig a{aspect-ratio:1;border-radius:7px;overflow:hidden}
+.fig img{width:100%;height:100%;object-fit:cover;transition:.2s}
+.fig a:hover img{opacity:.8}
+.footer .iglink{display:inline-block;margin-top:12px;color:var(--dorado);font-weight:700;font-size:.85rem}
+.copyright{border-top:1px solid rgba(255,255,255,.12);text-align:center;padding:22px;font-size:.82rem;color:rgba(255,255,255,.55)}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .sec{padding:60px 28px}
+  .topbar .wrap,.navbar .wrap{padding-left:28px;padding-right:28px}
+  .hero-inner{padding:0 28px}.hero h1{font-size:2.5rem}
+  .hero-stats{grid-template-columns:repeat(2,1fr);max-width:340px}
+  .nav-menu{position:fixed;top:0;right:-100%;height:100vh;width:74%;max-width:320px;background:#fff;flex-direction:column;padding:90px 32px;gap:22px;box-shadow:-8px 0 30px rgba(0,0,0,.15);transition:right .3s;z-index:90}
+  .nav-menu.open{right:0}
+  .hamb{display:flex;z-index:95}
+  .hamb.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .hamb.open span:nth-child(2){opacity:0}
+  .hamb.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .nav-right .btn{display:none}
+  .why-grid{grid-template-columns:1fr;gap:18px}
+  .ben-grid{grid-template-columns:repeat(2,1fr)}
+  .news-grid{grid-template-columns:1fr}
+  .ncard .imgbox img{height:180px}
+  .footer .wrap{grid-template-columns:1fr 1fr;gap:32px;padding:48px 28px 30px}
+  .expo{background-attachment:scroll}
+  h2{font-size:1.8rem}
+}
+@media(max-width:600px){
+  .topbar .left{gap:10px;font-size:10px}.topbar .left span:nth-child(1){display:none}
+  .hero h1{font-size:2rem}.hero p{font-size:1rem}
+  .hero-inner{justify-content:flex-end;padding-bottom:108px}
+  .hero-stats{position:static;margin-top:26px;grid-template-columns:repeat(2,1fr);max-width:none}
+  .hero-nav{bottom:24px}.hero-dots{bottom:38px;left:152px}
+  .ben-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .footer .wrap{grid-template-columns:1fr}
+  .cta .wrap{flex-direction:column;align-items:flex-start}
+  .dir-banner{padding:32px 26px}.expo-stats{gap:30px}
+}
